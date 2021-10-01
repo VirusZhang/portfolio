@@ -814,6 +814,28 @@
                   </script></li>
                   <li><i class="bi bi-chevron-right"></i> <a href="https://viruszhang.github.io/form/">Fill out this from please!</a></li>
                   <li><i class="bi bi-chevron-right"></i> <a href="https://viruszhang.github.io/penguin/">Penguins!</a></li>
+                          <canvas id="my_canvas" width = "4000px" height = "3000px" style = "border: 1px solid black"></canvas>
+    <script>
+        var canvas = document.getElementById('my_canvas');
+var ctx = canvas.getContext('2d');
+var grd = ctx.createLinearGradient(150, 0, 200, 0)
+grd.addColorStop(0, 'blue');
+grd.addColorStop(0.5, 'white');
+grd.addColorStop(1, 'pink');
+ctx.fillStyle = grd;
+ctx.fillRect(100, 20, 200, 100);
+ctx.fillStyle = 'red';
+ctx.beginPath()
+ctx.ellipse(100, 75, 50, 75, Math.PI / 4, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.setLineDash([5,5]);
+ctx.moveTo(0,200);
+ctx.lineTo(200, 0);
+ctx.stroke();
+    </script>
                   <canvas id="my_canvas" width = "4000px" height = "3000px" style = "border: 1px solid black"></canvas>
     <script>
         var c = document.getElementById("my_canvas");
