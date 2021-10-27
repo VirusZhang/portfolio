@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+  <style>
+        @media screen and (max-width: 992px){
+        body{
+            background-color: azure;
+            font-size: medium;
+        }
+    }
+    @media screen and (max-width: 992px){
+        body{
+            font-size: small;
+        }
+    }
+    </style>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -141,7 +154,7 @@
 
     
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+      <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -255,7 +268,7 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
   
 
     <!-- ======= Contact Section ======= -->
@@ -339,9 +352,37 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <a href="https://viruszhang.github.io/blog/">Fun O File</a></li>
-                  <script>
-                    var c = document.getElementById("my_canvas");
+                  <li><i class="bi bi-chevron-right"></i> <a href="https://viruszhang.github.io/blog/">Fun O File</a></li>\
+                  <li><i class="bi bi-chevron-right"></i>
+                      <canvas id="canvas" width = "4000px" height = "3000px" style = "border: 1px solid black"></canvas>
+    <script>
+        
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = 'red';
+        function changetext1() {
+
+document.getElementById("text").innerHTML="Penguins!";
+document.getElementById("text").style.color="green"
+document.getElementById("text").style.fontSize="50px"
+}
+function changetext2() {
+            document.getElementById("text").style.color="black"
+            document.getElementById("text").style.fontSize="100px"
+        }
+
+        const img = new Image();
+        img.src= 'penguin.jpg';
+        img.onload = function() {
+            ctx.drawImage(img, 500, 400)
+        }
+    </script>
+                  
+                  </li>
+                 
+                    <canvas id="my_canvas" width = "400px" height = "300px" style = "border: 1px solid black">
+            <li><script>
+                     var c = document.getElementById("my_canvas");
         var ctx = c.getContext("2d");
         ctx.fillStyle = 'red';
 
@@ -809,9 +850,31 @@
         ctx.beginPath();
         ctx.arc(460, 595, 50, 0, 2 * Math.PI);
         ctx.stroke();
-                  </script>
+                  </script></li>
                   <li><i class="bi bi-chevron-right"></i> <a href="https://viruszhang.github.io/form/">Fill out this from please!</a></li>
                   <li><i class="bi bi-chevron-right"></i> <a href="https://viruszhang.github.io/penguin/">Penguins!</a></li>
+                          <canvas id="canvas2" width = "4000px" height = "3000px" style = "border: 1px solid black"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas2');
+var ctx = canvas.getContext('2d');
+var grd = ctx.createLinearGradient(150, 0, 200, 0)
+grd.addColorStop(0, 'blue');
+grd.addColorStop(0.5, 'white');
+grd.addColorStop(1, 'pink');
+ctx.fillStyle = grd;
+ctx.fillRect(100, 20, 200, 100);
+ctx.fillStyle = 'red';
+ctx.beginPath()
+ctx.ellipse(100, 75, 50, 75, Math.PI / 4, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.setLineDash([5,5]);
+ctx.moveTo(0,200);
+ctx.lineTo(200, 0);
+ctx.stroke();
+    </script>
                   <canvas id="my_canvas" width = "4000px" height = "3000px" style = "border: 1px solid black"></canvas>
     <script>
         var c = document.getElementById("my_canvas");
